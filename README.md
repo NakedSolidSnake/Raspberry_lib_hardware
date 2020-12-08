@@ -1,4 +1,6 @@
-![hardware](https://image.freepik.com/vetores-gratis/microchip-vector-chip-digital-processador-tecnologia-circuito-integrado-de-ilustracao-de-hardware-de-computador_109722-430.jpg)
+<p align="center">
+  <img src="https://image.freepik.com/vetores-gratis/microchip-vector-chip-digital-processador-tecnologia-circuito-integrado-de-ilustracao-de-hardware-de-computador_109722-430.jpg" />
+</p>
 
 # Introdução
 No artigo anterior foi descrito o que era IPC e quais eram os seus tipos, neste artigo será descrito
@@ -31,7 +33,9 @@ A versão B+ da Raspberry Pi 3 tem processador de 1.4GHz, 1GB de memória e agor
   <li>Dimensões: 85 x 56 x 17mm</li>
 </ul>
 
-![Raspberry Pi](https://images-na.ssl-images-amazon.com/images/I/511SeRAim5L._AC_.jpg)
+<p align="center">
+  <img src="https://images-na.ssl-images-amazon.com/images/I/511SeRAim5L._AC_.jpg" />
+</p>
 
 # CMake
 CMake é uma ferramenta open source desenvolvida para compilar, gerar testes e construir
