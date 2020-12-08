@@ -1,3 +1,5 @@
+![hardware](https://image.freepik.com/vetores-gratis/microchip-vector-chip-digital-processador-tecnologia-circuito-integrado-de-ilustracao-de-hardware-de-computador_109722-430.jpg)
+
 # Introdução
 No artigo anterior foi descrito o que era IPC e quais eram os seus tipos, neste artigo será descrito
 a implementação e instalação da biblioteca responsável por controlar as aplicações que são baseadas 
@@ -63,9 +65,10 @@ Faça o download do repositorio no link:
 
 ```bash
 $ cd
-$ git clone [github](https://github.com/NakedSolidSnake/articles)
+$ git clone https://github.com/NakedSolidSnake/articles
 ```
 
+Para acessar o repositório clique nesse link [NakedSolidSnake](https://github.com/NakedSolidSnake/articles)
 
 Acesse o diretorio libs para compilar e instalar a biblioteca responsavel por controlar o botão e LED das aplicações:
 
@@ -99,7 +102,7 @@ Com o setup concluído, será apresentado a implementação da lib hardware.
 
 # Implementação da lib hardware
 ## Headers
-Para a implementação da lib hardware foi utilizado a API wiringPi que provê uma abstração do hardware da Raspberry Pi, dessa forma facilitando o desenvolvimento. Para saber mais sobre a API acesse  [wiringpi](http://wiringpi.com/)
+Para a implementação da lib hardware foi utilizado a API wiringPi que provê uma abstração do hardware da Raspberry Pi, dessa forma facilitando o desenvolvimento. Para saber mais sobre a API acesse [wiringpi](http://wiringpi.com/)
 
 A seguir é possível visualizar a implementação do header GPIO.h
 
