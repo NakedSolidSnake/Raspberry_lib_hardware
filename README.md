@@ -3,7 +3,7 @@
 </p>
 
 # Introdução
-No artigo anterior foi descrito o que era IPC e quais eram os seus tipos, neste artigo será descrito
+No artigo [anterior](https://github.com/NakedSolidSnake/Raspberry_IPC_Intro) foi descrito o que era IPC e quais eram os seus tipos, neste artigo será descrito
 a implementação e instalação da biblioteca responsável por controlar as aplicações que são baseadas 
 no famoso acionamento de um LED através de um botão, esta biblioteca foi criada através de três dos quatros pilares do paradigma de programação orientação a objetos que é a abstração, encapsulamento e herança. Para execução das aplicações serão feitas na plataforma Raspberry Pi 3 e a compilação da biblioteca tanto das aplicações serão feitas utilizando o CMake.
 
