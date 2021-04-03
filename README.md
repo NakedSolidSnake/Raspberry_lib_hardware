@@ -2,12 +2,24 @@
   <img src="https://image.freepik.com/vetores-gratis/microchip-vector-chip-digital-processador-tecnologia-circuito-integrado-de-ilustracao-de-hardware-de-computador_109722-430.jpg" />
 </p>
 
-# Introdução
+# Biblioteca de Hardware
+
+## Tópicos
+* [Introdução](#introdução)
+* [Raspberry Pi3 B+](#raspberry-pi3-b)
+* [Especificação](#especificacao)
+* [CMake](#cmake)
+* [Implementação da biblioteca de hardware](#implementacao-da-biblioteca-de-hardware)
+* [Conclusão](#conclusão)
+* [Referências](#referências)
+
+
+## Introdução
 No artigo [anterior](https://github.com/NakedSolidSnake/Raspberry_IPC_Intro) foi descrito o que era IPC e quais eram os seus tipos, neste artigo será descrito
 a implementação e instalação da biblioteca responsável por controlar as aplicações que são baseadas 
 no famoso acionamento de um LED através de um botão, esta biblioteca foi criada através de três dos quatros pilares do paradigma de programação orientação a objetos que é a abstração, encapsulamento e herança. Para execução das aplicações serão feitas na plataforma Raspberry Pi 3 e a compilação da biblioteca tanto das aplicações serão feitas utilizando o CMake.
 
-# Raspberry Pi 3 B+
+## Raspberry Pi 3 B+
 
 A Raspberry Pi 3 Model B+ Anatel é um mini-PC que roda distribuições Linux como o Raspbian e Ubuntu, mas também suporta outros sistemas operacionais como o Windows 10 IoT e versões customizadas do Linux.
 
@@ -114,11 +126,11 @@ $ sudo ldconfig
 
 Com o setup concluído, será apresentado a implementação da lib hardware.
 
-# Implementação da lib hardware
-## Headers
+## Implementação da biblioteca de hardware
+### Headers
 Para a implementação da lib hardware foi utilizado a API wiringPi que provê uma abstração do hardware da Raspberry Pi, dessa forma facilitando o desenvolvimento. Para saber mais sobre a API acesse [wiringpi](http://wiringpi.com/)
 
-### gpio.h
+#### gpio.h
 
 Essa enumeração representa o modo em qual o gpio vai ser utilizado com dois estados possíveis: entrada ou saída.
 ```c
