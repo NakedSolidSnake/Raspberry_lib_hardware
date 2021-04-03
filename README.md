@@ -6,12 +6,24 @@
 
 ## Tópicos
 * [Introdução](#introdução)
-* [Raspberry Pi3 B+](#raspberry-pi3-b)
-* [Especificação](#especificacao)
+* [Raspberry Pi3 B+](#raspberry-pi-3-b)
+* [Especificação](#especificação)
 * [CMake](#cmake)
-* [Implementação da biblioteca de hardware](#implementacao-da-biblioteca-de-hardware)
+* [Preparando o ambiente](preparando-o-ambiente)
+* [Implementação da biblioteca de hardware](#implementação-da-biblioteca-de-hardware)
+* [Headers](#headers)
+* [gpio.h](#gpioh)
+* [led.h](#ledh)
+* [button.h](#buttonh)
+* [Sources](#sources)
+* [gpio.c](#gpioc)
+* [led.c](#ledc)
+* [button.c](#buttonc)
+* [Testando a instalação e as conexões de hardware](#testando-a-instalação-e-as-conexões-de-hardware)
 * [Conclusão](#conclusão)
 * [Referências](#referências)
+ 
+
 
 
 ## Introdução
