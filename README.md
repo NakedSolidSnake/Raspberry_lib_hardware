@@ -207,7 +207,7 @@ typedef struct
     button_cb cb;
 }Button_t;
 ```
-Função de inicialização do Button.
+Função de inicialização do botão.
 ```c
 int Button_init(Button_t *button);
 ```
@@ -220,11 +220,8 @@ int Button_read(Button_t *button);
 
 Nesta seção é possível entender como foi feita a implementação e o conceito de herança utilizado.
 
+Aqui podemos ver a implementação de GPIO_t sem muita complexidade, é possível ver a inicialização da API que quando chamada nesse formato mapeia os pinos para o modo _schema_ onde são numerados de 0 à 16.
 ```c
-#include <gpio.h>
-#include <stdlib.h>
-#include <wiringPi.h>
-
 int GPIO_init(GPIO_t *gpio)
 {
     if(!gpio)
@@ -237,14 +234,8 @@ int GPIO_init(GPIO_t *gpio)
 }
 ```
 
-Na linha 5 pode-se ver a implementação de gpio sem muita complexidade, na linha 10 é possível ver a inicialização da API que quando chamada nesse formato mapeia os pinos para o modo schema onde são numerados de 0 à 16.
-
+Aqui pode-se ver como é passado o parametro para GPIO_init, fazendo _casting_ para o tipo _(GPIO_t *)_ a estrutura LED passa a ser GPIO devido ter as mesma referências em memória.
 ```c
-#include <led.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <wiringPi.h>
-
 int LED_init(LED_t *led)
 {
     if(!led)
@@ -252,7 +243,10 @@ int LED_init(LED_t *led)
 
     return GPIO_init((GPIO_t *)led);    
 }
+```
 
+Aqui pode-se ver como é passado o parâmetro para GPIO_init, fazendo _casting_ para o tipo _(GPIO_t *)_ a estrutura LED passa a ser GPIO devido ter as mesma referências em memória.
+```c
 int LED_set(LED_t *led, eState_t eState)
 {
     if(!led)
@@ -264,13 +258,8 @@ int LED_set(LED_t *led, eState_t eState)
 }
 ```
 
-Na linha 11 pode-se ver como é passado o parametro para GPIO_init, fazendo _casting_ para o tipo (GPIO_t *) a estrutura LED passa a ser GPIO devido ter as mesma referências em memória.
-
+Aqui acontece o mesmo que em led.c, essa é uma forma de se obter a herança em C.
 ```c
-#include <button.h>
-#include <stdio.h>
-#include <stdlib.h>
-
 int Button_init(Button_t *button)
 {
     if(!button)
@@ -285,7 +274,9 @@ int Button_init(Button_t *button)
 
     return EXIT_SUCCESS;
 }
-
+```
+Implementação de leitura do botão 
+```c
 int Button_read(Button_t *button)
 {
     if(!button)
@@ -295,16 +286,19 @@ int Button_read(Button_t *button)
 }
 ```
 
-
-Aqui acontece o mesmo que em led.c, essa é uma forma de se obter a herança em C.
-
 # Testando a instalação e as conexões de hardware
 
 A conexão dos componentes é bem simples demonstrado na figura a seguir:
 
-![board](images/RaspberryConnection_bb.jpg)
+<p align="center">
+    <img src="images/RaspberryConnection_bb.jpg" />
+  <figcaption><p align="center">Montagem do LED é do Botão no Fritzing.</p></figcaption>
+</p>
 
-![board_sch](images/RaspberryConnection_schem.jpg)
+<p align="center">
+    <img src="images/RaspberryConnection_schem.jpg" />
+  <figcaption><p align="center">Esquemático do LED e do Botão no Fritzing.</p></figcaption>
+</p>
 
 
 Uma vez montado o circuito agora é só testar para ver se está tudo funcionamento conforme o esperado, para isso acesse a pasta bin/tests:
@@ -321,5 +315,6 @@ $ ./test_test
 
 
 # Conclusão
-Neste artigo foi apresentado como se configura o ambiente, verificação de como o código fonte foi implementado, de uma forma simples mas sofisticada, para não dizer cheio de flores, e também como conectar os componentes aos gpio's do Raspberry Pi 3 B+, e por fim como testar para verificar se a configuração foi executada corretamente.
-No próximo artigo vem o primeiro IPC, visando que esses passos são pré requisito para os próximos artigos.
+Neste artigo foi apresentado como se configura o ambiente, verificação de como o código fonte foi implementado de uma forma simples mas sofisticada, para não dizer cheio de flores, e também como conectar os componentes aos gpio's do Raspberry Pi 3 B+, e por fim como testar para verificar se a configuração foi executada corretamente. No próximo [artigo](https://github.com/NakedSolidSnake/Raspberry_fork_exec_daemon) abordaremos os mecanismos para criação de processos.
+
+Para acessar a biblioteca completa clique [aqui](https://github.com/NakedSolidSnake/Raspberry_lib_hardware)
