@@ -118,7 +118,7 @@ Com o setup concluído, será apresentado a implementação da lib hardware.
 ## Headers
 Para a implementação da lib hardware foi utilizado a API wiringPi que provê uma abstração do hardware da Raspberry Pi, dessa forma facilitando o desenvolvimento. Para saber mais sobre a API acesse [wiringpi](http://wiringpi.com/)
 
-### GPIO.h
+### gpio.h
 
 Essa enumeração representa o modo em qual o gpio vai ser utilizado com dois estados possíveis: entrada ou saída.
 ```c
@@ -150,7 +150,7 @@ Função de inicialização do GPIO.
 int GPIO_init(GPIO_t *gpio);
 ```
 
-### LED.h
+### led.h
 Definição da estrutura de LED onde o unico atributo é a estrutura do GPIO, colocando o tipo GPIO como primeiro atributo da estrutura LED garante que em memória o tipo LED_t e GPIO_t tenham o mesmo endereço de memória assim utilizando o cast para GPIO_t é possível acessar os atributos de GPIO, isso será demonstrado na implementação em sources, mas isso caracteriza a herança do paradigma de programação orientado a objetos.
 ```c
 typedef struct
@@ -169,7 +169,7 @@ Função responsável por alterar o estado do LED conforme seu parâmetro eState
 int LED_set(LED_t *led, eState_t eState);
 ```
 
-### Button.h
+### button.h
 
 Definição de um Tipo para ponteiro de função onde seu retorno é void e sem parâmetros de entrada, esse tipo serve para poder configurar o callback caso o botão seja configurado para poder gerar interrupções.
 
@@ -219,7 +219,7 @@ int Button_read(Button_t *button);
 ## Sources
 
 Nesta seção é possível entender como foi feita a implementação e o conceito de herança utilizado.
-
+### gpio.c
 Aqui podemos ver a implementação de GPIO_t sem muita complexidade, é possível ver a inicialização da API que quando chamada nesse formato mapeia os pinos para o modo _schema_ onde são numerados de 0 à 16.
 ```c
 int GPIO_init(GPIO_t *gpio)
@@ -234,6 +234,7 @@ int GPIO_init(GPIO_t *gpio)
 }
 ```
 
+### led.c
 Aqui pode-se ver como é passado o parametro para GPIO_init, fazendo _casting_ para o tipo _(GPIO_t *)_ a estrutura LED passa a ser GPIO devido ter as mesma referências em memória.
 ```c
 int LED_init(LED_t *led)
@@ -257,7 +258,7 @@ int LED_set(LED_t *led, eState_t eState)
     return EXIT_SUCCESS;
 }
 ```
-
+### button.c
 Aqui acontece o mesmo que em led.c, essa é uma forma de se obter a herança em C.
 ```c
 int Button_init(Button_t *button)
