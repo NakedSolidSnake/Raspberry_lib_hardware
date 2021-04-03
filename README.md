@@ -61,11 +61,11 @@ A versão B+ da Raspberry Pi 3 tem processador de 1.4GHz, 1GB de memória e agor
   <img src="https://images-na.ssl-images-amazon.com/images/I/511SeRAim5L._AC_.jpg" />
 </p>
 
-# CMake
+## CMake
 CMake é uma ferramenta open source desenvolvida para compilar, gerar testes e construir
 pacotes para distribuir as aplicações em forma de .rpm ou .deb
 
-# Preparando o ambiente
+## Preparando o ambiente
 Para o desenvolvimento dos passos a seguir é necessário ter a Raspberry Pi conectada na internet.
 Acesse a Raspberry via commando ssh ou se estiver conectada em um monitor abra um terminal,
 durante o desenvolvimento dos exemplos foi utilizado o acesso via ssh.
@@ -311,7 +311,7 @@ int Button_read(Button_t *button)
 }
 ```
 
-# Testando a instalação e as conexões de hardware
+## Testando a instalação e as conexões de hardware
 
 A conexão dos componentes é bem simples demonstrado na figura a seguir:
 
@@ -339,7 +339,13 @@ $ ./test_test
 ```
 
 
-# Conclusão
+## Conclusão
 Neste artigo foi apresentado como se configura o ambiente, verificação de como o código fonte foi implementado de uma forma simples mas sofisticada, para não dizer cheio de flores, e também como conectar os componentes aos gpio's do Raspberry Pi 3 B+, e por fim como testar para verificar se a configuração foi executada corretamente. No próximo [artigo](https://github.com/NakedSolidSnake/Raspberry_fork_exec_daemon) abordaremos os mecanismos para criação de processos.
 
 Para acessar a biblioteca completa clique [aqui](https://github.com/NakedSolidSnake/Raspberry_lib_hardware)
+
+## Referências
+* [wiringpi](http://wiringpi.com/)
+* [CMake](https://cmake.org/)
+* [Raspberry Pi](https://www.raspberrypi.org/)
+* [Fritzing](https://fritzing.org/)
